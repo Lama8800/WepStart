@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+
+<body>
+
+  
+  <style>
+  
+  
+  
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      
+       background: linear-gradient(to right, #007DFF, #9BD4FF); 
+      
+      
+      background-color: antiquewhite;
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      direction: rtl;
+      font-size: larger;
+    }
+  
+    h2 , h3 {
+     
+     color: #FFFFFF ;
+      
+      
+      
+    }
+
+    /* The grid: Three equal columns that floats next to each other */
+    .column {
+      float: left;
+      width: 33.33%;
+      padding: 50px;
+      text-align: center;
+      font-size: 18px;
+      cursor: pointer;
+      color: white;
+      animation: pulse 2s infinite;
+      
+      
+      backdrop-filter: blur(5px); 
+      background: rgba(255, 255, 255, 0.2);
+              
+      
+      
+    }
+
+    /* Pulse animation */
+    @keyframes pulse {
+      0% {
+        transform: scale(0.9);
+      }
+      50% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(0.9);
+      }
+    }
+
+    .containerTab {
+      padding: 20px;
+      color: white;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+      
+      
+      
+    }
+
+    /* Closable button inside the container tab */
+    .closebtn {
+      float: right;
+      color: white;
+      font-size: 35px;
+      cursor: pointer;
+    }
+
+    /* Link styles */
+    .a {
+      background-color: azure;
+      padding: 5px 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .a:hover {
+      background-color: #61c6d3;
+      color: white;
+    }
+    
+  }
+  
+  /*
+  h1 {
+    
+    color: #F7F5DE
+    
+    color : #3A652F;
+    
+    
+  }
+    */
+
+  </style>
+
+<div style="text-align:center">
+  <h2>ملخص تطوير الويب</h2>
+  <h3>إضغط على القسم وبتظهر ليك معلومات عنه</h3>
+</div>
+
+<!-- Three columns -->
+<div class="row">
+  <div class="column" onclick="openTab('b1');" style="background: #61c6d3">
+    front-end
+  </div>
+  <div class="column" onclick="openTab('b2');" style="background:#da9f78">
+    back-end
+  </div>
+  <div class="column" onclick="openTab('b3');" style="background:rgba(221, 14, 135, 0.333)">
+    full-stack
+  </div>
+</div>
+
+<!-- Full-width columns: (hidden by default) -->
+<div id="b1" class="containerTab" style="display:none;background: #61c6d3">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Front-End</h2>
+  <p>
+    مطور الفرونت اند مسؤول عن كل شي بنشوفه في الموقع زي الاشكال والالوان والحركة وكدة 
+    بستخدم لغات زي 
+    (html , css , js )
+    وطبعا بالاضافة لي اللغة بكون عندنا حاجة اسمها فرييم وورك ودا حتتعلموه لي قدام
+    وهنا رابط بوديك لقسم الفرونت اند من قناة اسطورة الويب الزيرو 
+    <a href="https://elzero.org/tracks/front-end/" class="a">Front-End</a>
+  </p>
+</div>
+
+<div id="b2" class="containerTab" style="display:none;background:#da9f78">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Back-End</h2>
+  <p>
+    مطور الباك اند دا البكون مسؤول عن الشغل التقيل في الموقع زي التعامل مع قواعد البيانات 
+    ونخزين المعلومات وتنفيذ العمليات وكل الشغل البكون خللف الكواليس 
+    اللغات في القسم دا متنوعة ممكن تختار 
+    paython , php , java 
+    وخيارات كتيرة وطبعا اي لغة من ديل بتتعلم معاها اطار العمل بتاعها
+    وهنا رابط بوديك لقسم الباك اند من قناة اسطورة الويب الزيرو 
+    <a href="https://elzero.org/tracks/php-web-developer/" class="a">Back-End</a>
+  </p>
+</div>
+
+<div id="b3" class="containerTab" style="display:none;background:rgba(221, 14, 135, 0.333)">
+  <span onclick="this.parentElement.style.display='none'" class="closebtn">&times;</span>
+  <h2>Full-Stack</h2>
+  <p>
+    معنى كلمة استاك هو كومة من الاشياء ودا بالضبط بعبر عن شغل الفل استاك ممكن نقول عليه معلم
+    كلو لانو دا بشتغل قسم الفرونت بي الوانو واشكالو وتصميمو وكل شي وبرضو بشتغل الجزء الخاص بالباك اند بكل تفاصيله
+  </p>
+</div>
+
+
+
+<script>
+function openTab(tabName) {
+  var i, x;
+  x = document.getElementsByClassName("containerTab");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  document.getElementById(tabName).style.display = "block";
+}
+</script>
+
+</body>
+</html>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+</body>
+
+</html>
